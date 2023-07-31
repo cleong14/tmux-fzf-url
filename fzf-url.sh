@@ -20,6 +20,8 @@ open_url() {
         nohup xdg-open "$@"
     elif hash open &>/dev/null; then
         nohup open "$@"
+    elif hash termux-open-url &>/dev/null; then
+        nohup termux-open-url "$@"
     elif [[ -n $BROWSER ]]; then
         nohup "$BROWSER" "$@"
     fi
